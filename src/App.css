@@ -9,46 +9,46 @@
 .floating-circle {
   position: fixed;
   border-radius: 50%;
-  opacity: 0.6;
-  filter: blur(40px);
+  opacity: 0.8;
+  filter: blur(80px);
   animation: float 20s infinite ease-in-out;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 
 .circle-1 {
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   background: rgb(147, 51, 234);
-  left: 5%;
-  top: 20%;
+  left: -10%;
+  top: 10%;
   animation-delay: 0s;
 }
 
 .circle-2 {
-  width: 250px;
-  height: 250px;
+  width: 500px;
+  height: 500px;
   background: rgb(236, 72, 153);
-  right: 5%;
-  top: 30%;
+  right: -10%;
+  top: 20%;
   animation-delay: -5s;
 }
 
 .circle-3 {
-  width: 280px;
-  height: 280px;
+  width: 550px;
+  height: 550px;
   background: rgb(59, 130, 246);
-  left: 15%;
-  bottom: 20%;
+  left: 20%;
+  bottom: -10%;
   animation-delay: -10s;
 }
 
 .circle-4 {
-  width: 260px;
-  height: 260px;
+  width: 520px;
+  height: 520px;
   background: rgb(244, 114, 182);
-  right: 15%;
-  bottom: 25%;
+  right: 20%;
+  bottom: -15%;
   animation-delay: -15s;
 }
 
