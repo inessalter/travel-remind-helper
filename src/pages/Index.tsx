@@ -3,7 +3,7 @@ import { TravelForm } from "@/components/TravelForm";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-accent/30 to-secondary/30 relative overflow-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-b from-accent/30 to-secondary/30 relative overflow-hidden">
       <div className="floating-circle circle-1" />
       <div className="floating-circle circle-2" />
       <div className="floating-circle circle-3" />
