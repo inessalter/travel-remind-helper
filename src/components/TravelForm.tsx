@@ -47,18 +47,31 @@ export function TravelForm() {
 
     const daysUntilProject = differenceInDays(date, new Date());
 
-    if (daysUntilProject <= reminderDays) {
+    if (daysUntilProject < 0) {
       toast({
-        title: "Project Due Soon!",
-        description: "Your project deadline is approaching very soon!",
+        title: "Invalid Date",
+        description: "Please select a future date for your project",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // If project is due in less than 2 days
+    if (daysUntilProject <= 2) {
+      toast({
+        title: "Project Due Very Soon!",
+        description: "Your project deadline is in less than 2 days!",
         variant: "destructive",
       });
     } else {
+      const reminderDate = new Date(date);
+      reminderDate.setDate(reminderDate.getDate() - reminderDays);
+      
       toast({
-        title: "Reminder Set!",
-        description: `We'll remind you about "${projectName}" ${reminderDays} day(s) before the deadline.`,
+        title: "Reminder Set Successfully!",
+        description: `You'll receive a reminder for "${projectName}" on ${reminderDate.toLocaleDateString()}`,
       });
-      console.log("Email reminder will be sent to:", email);
+      console.log("Email reminder will be sent to:", email, "for project:", projectName, "on:", reminderDate);
     }
   };
 
