@@ -1,8 +1,68 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(40px);
+  animation: float 20s infinite ease-in-out;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: hsl(var(--primary) / 0.3);
+  left: 5%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  background: hsl(var(--accent) / 0.3);
+  right: 10%;
+  top: 30%;
+  animation-delay: -5s;
+}
+
+.circle-3 {
+  width: 180px;
+  height: 180px;
+  background: hsl(var(--secondary) / 0.3);
+  left: 15%;
+  bottom: 20%;
+  animation-delay: -10s;
+}
+
+.circle-4 {
+  width: 160px;
+  height: 160px;
+  background: hsl(349 89% 90% / 0.3);
+  right: 15%;
+  bottom: 25%;
+  animation-delay: -15s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) scale(1);
+  }
+  75% {
+    transform: translateY(20px) scale(0.95);
+  }
 }
 
 .logo {
