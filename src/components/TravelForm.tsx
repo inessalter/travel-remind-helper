@@ -56,11 +56,11 @@ export function TravelForm() {
       return;
     }
 
-    // If project is due in less than 2 days
-    if (daysUntilProject <= 2) {
+    // If project is due in less than 1 day
+    if (daysUntilProject < 1) {
       toast({
         title: "Project Due Very Soon!",
-        description: "Your project deadline is in less than 2 days!",
+        description: "Your project deadline is in less than 24 hours!",
         variant: "destructive",
       });
     } else {
