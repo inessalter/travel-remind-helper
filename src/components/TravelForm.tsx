@@ -76,42 +76,42 @@ export function TravelForm() {
   };
 
   return (
-    <Card className="w-full max-w-md animate-fade-in bg-white/50 backdrop-blur-sm">
-      <CardHeader>
+    <Card className="w-full max-w-md mx-auto bg-white/50 backdrop-blur-sm">
+      <CardHeader className="text-center">
         <CardTitle className="text-2xl font-semibold">Set Project Reminder</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium">Project Name</label>
+            <label className="text-sm font-medium text-center block">Project Name</label>
             <Input
               type="text"
               placeholder="Enter project name"
               value={projectName}
               onChange={(e) => setProjectName(e.target.value)}
-              className="w-full transition-all duration-200 focus:ring-2"
+              className="w-full transition-all duration-200 focus:ring-2 text-center"
             />
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-medium">Project Deadline</label>
-            <div className="border rounded-lg p-4 bg-white">
+            <label className="text-sm font-medium text-center block">Project Deadline</label>
+            <div className="flex justify-center border rounded-lg p-4 bg-white">
               <Calendar
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-md border"
+                className="rounded-md border mx-auto"
                 disabled={{ before: new Date() }}
               />
             </div>
           </div>
 
           <div className="space-y-4">
-            <label className="text-sm font-medium">Reminder Preference</label>
+            <label className="text-sm font-medium text-center block">Reminder Preference</label>
             <RadioGroup 
               value={reminderType} 
               onValueChange={setReminderType}
-              className="gap-3"
+              className="gap-3 flex flex-col items-center"
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="1" id="day" />
@@ -132,27 +132,27 @@ export function TravelForm() {
             </RadioGroup>
 
             {reminderType === "custom" && (
-              <div className="pl-6">
+              <div className="flex justify-center">
                 <Input
                   type="number"
                   placeholder="Number of days before"
                   value={customDays}
                   onChange={(e) => setCustomDays(e.target.value)}
                   min="1"
-                  className="w-full max-w-[200px]"
+                  className="w-full max-w-[200px] text-center"
                 />
               </div>
             )}
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-medium">Email</label>
+            <label className="text-sm font-medium text-center block">Email</label>
             <Input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full transition-all duration-200 focus:ring-2"
+              className="w-full transition-all duration-200 focus:ring-2 text-center"
             />
           </div>
           
